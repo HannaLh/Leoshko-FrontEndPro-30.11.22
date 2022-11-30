@@ -1,8 +1,8 @@
 const hours = +prompt('Input hours here');
 
-if (!!Number(hours)) { // typeof hours === 'number'
-    const seconds = hours * 60;
+if (typeof hours === 'number') { 
+    let seconds = hours * 3600;
     alert(seconds);
 } else {
-    alert('Please, enter the NUMBER!');
+    alert('Please, enter the number!');
 }
