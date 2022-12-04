@@ -1,6 +1,6 @@
 let birthYear = +prompt('Enter the year of birth:');
-const currentYear = 2022;
-const lettersRegExp = /[a-zA-Z]/g; // /g - global flag (allows multiple matches)
+const currentYear = new Date().getFullYear();
+const lettersRegExp = /[a-zA-Z]/g;
 const age = currentYear - birthYear;
 
 const cityCapitalMapping = {
@@ -16,10 +16,7 @@ const favSportChampionMapping = {
 }
 
 quit:if (birthYear) {
-        if (isNaN(+birthYear)) {
-            alert('The year of birth must be an integer.');
-            break quit;
-        } else if (birthYear < 1882 || birthYear > currentYear) {
+        if (birthYear < 1882 || birthYear > currentYear) {
             alert('Enter correct date.');
             break quit;
         }
@@ -27,7 +24,7 @@ quit:if (birthYear) {
 
         let city = prompt('Enter the city you live in:');
         if (city) {
-            if (!lettersRegExp.test(city)) {      // if city includes not only letters
+            if (!lettersRegExp.test(city)) {
                 alert('The city of birth must be a string.');
                 break quit;
             } 
@@ -45,7 +42,7 @@ quit:if (birthYear) {
 
         let favSport = prompt('Enter your favorite sport:');
         if(favSport) {
-            if (!lettersRegExp.test(favSport)) {      // if favSport includes not only letters
+            if (!lettersRegExp.test(favSport)) {
                 alert('The sport must be a string.');
                 break quit;
             }
