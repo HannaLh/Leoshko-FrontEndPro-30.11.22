@@ -43,7 +43,7 @@ quit:if (birthYear) {
         }
         alert(birthMessage + '\n' + cityMessage);
 
-        let favSport = prompt('Enter your favourite sport:');
+        let favSport = prompt('Enter your favorite sport:');
         if(favSport) {
             if (!lettersRegExp.test(favSport)) {      // if favSport includes not only letters
                 alert('The sport must be a string.');
@@ -52,7 +52,7 @@ quit:if (birthYear) {
             if (favSport in favSportChampionMapping) {
                 favSportMessage = `Cool! Would you like to be ${favSportChampionMapping[favSport]}?`;
             } else {
-                favSportMessage = `Your favourite sport is ${favSport}.`;
+                favSportMessage = `Your favorite sport is ${favSport}.`;
             }
         } else {
             alert('Sorry, you did not enter sport.');
