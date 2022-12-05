@@ -33,11 +33,11 @@ const a = +prompt('enter number 1');
 const b = +prompt('enter number 2');
 
 if (a % b === 0) {
-    alert('a є дільником b');
+    alert('a is a divisor for b');
 } else if (b % a === 0) {
-    alert('b є дільником a');
+    alert('b is a divisor for a');
 } else {
-    alert ('Число не є дільником');
+    alert ('The number is not a divisor');
 }
 
 // 4 Вивести на сторінку в одну строку через зап’яту числа від 10 до 20
@@ -53,7 +53,7 @@ console.log(str);
 //5 Вивести квадрати чисел від 10 до 20
 
 for (let num = 10; num <= 20; num++) {
-    console.log(`Квадрат ${num} = ${num*num}`);
+    console.log(`the square of number ${num} = ${num*num}`);
 }
 
 //6 Вивести таблицю множення на 7
