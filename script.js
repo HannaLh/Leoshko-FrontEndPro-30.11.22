@@ -42,42 +42,43 @@ if (a % b === 0) {
 
 // 4 Вивести на сторінку в одну строку через зап’яту числа від 10 до 20
 
-let str = '';
+let result = '';
 
-for (let number = 10; number <= 20; number++) {
-    str += number + ', ';
+for (let i = 10; i <= 20; i++) {
+    result += i + ', ';
 }
 
-console.log(str);
+console.log(result);
 
 //5 Вивести квадрати чисел від 10 до 20
 
-for (let num = 10; num <= 20; num++) {
-    console.log(`the square of number ${num} = ${num*num}`);
+for (let i = 10; i <= 20; i++) {
+    console.log(`the square of number ${i} = ${i*i}`);
 }
 
 //6 Вивести таблицю множення на 7
 
-for (let num = 1; num <= 9; num++) {
-    console.log(`${num} * 7 = ${num*7}`);
+for (let i = 1; i <= 9; i++) {
+    console.log(`${i} * 7 = ${i*7}`);
 }
 
 // 7 Знайти середнє арифметичне всіх цілих чисел від 1 до 500 
 
-totalSum = 0;
+let totalSum = 0;
+const meanEndValue = 500;
 
-for (let num = 1; num <= 500; num++) {
-    totalSum += num;
+for (let i = 1; i <= meanEndValue; i++) {
+    totalSum += i;
 }
 
-console.log(totalSum / 500);
+console.log(totalSum / meanEndValue);
 
 // 8 Знайти добуток усіх цілих чисел від 15 до 35
 
 let totalSum = 1n;
 
-for (let num = 15n; num <= 35n; num++) {
-    totalSum *= num;
+for (let i = 15n; i <= 35n; i++) {
+    totalSum *= i;
 }
 
 console.log(totalSum);
@@ -86,9 +87,9 @@ console.log(totalSum);
 
 let totalSum = 0;
 
-for (let num = 30; num <= 80; num++) {
-    if (!(num % 2)) {
-        totalSum += num;
+for (let i = 30; i <= 80; i++) {
+    if (!(i % 2)) {
+        totalSum += i;
     }
 }
 
@@ -96,12 +97,12 @@ console.log(totalSum);
 
 //10 Вивести всі числа в діапазоні від 100 до 200 кратні 3
 
-let str = '';
+let result = '';
 
-for (let num = 100; num <= 200; num++) {
-        if (num % 3 === 0) {
-            str += num + ', ';
+for (let i = 100; i <= 200; i++) {
+        if (i % 3 === 0) {
+            result += i + ', ';
         }
     }
     
-console.log(str);
+console.log(result);
