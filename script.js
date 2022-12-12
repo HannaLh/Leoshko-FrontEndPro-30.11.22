@@ -42,8 +42,15 @@ for (let i = 0; i < arr.length; i++) {
             amountOddPositiveNum += 1;
             sumOddPositiveNum += arr[i];
         }
-    }
-    if(arr[i] < 0) {
+    } else if (arr[i] === 0) {
+        if (maxNum <= arr[i]) {
+            maxNum = arr[i];
+            maxNumIndex = i;
+        } else if (minNum >= arr[i]) {
+            minNum = arr[i];
+            minNumIndex = i;
+        }
+    } else {
         amountNegativeNubmers += 1;
 
         if (minNum > arr[i]){
@@ -60,7 +67,7 @@ for (let i = 0; i < arr.length; i++) {
     }
 }
 
-console.log(`1. Positive elements: ${sumPositivNum}; Positive amount: ${amountPositiveNum}`);
+console.log(`1. Sum of positive elements: ${sumPositivNum}; Positive amount: ${amountPositiveNum}`);
 console.log(`2. Min number in array: ${minNum}; Min number index: ${minNumIndex}`);
 console.log(`3. Max number in array: ${maxNum}; Max number index: ${maxNumIndex}`);
 console.log(`4. Amount negative number in array: ${amountNegativeNubmers}`);
