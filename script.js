@@ -19,7 +19,7 @@ for (let i = 10; i <= 100; i += 10) {
 
 // Дане ціле число. Вивести всі цілі числа від 1 до 100, квадрат яких не перевищує числа N
 
-let number = +prompt('Enter the integer');
+const number = +prompt('Enter the integer');
 
 for(let i = 1; i <= 100; i++) {
     let squareOfNumber = i*i;
@@ -48,7 +48,7 @@ if (number > 1) {
 
 //Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
 
-let number = +prompt('Enter any positive number');
+const number = +prompt('Enter any positive number');
 let powerOfThree = 3 ** 1;
 
 while (powerOfThree <= number) {
