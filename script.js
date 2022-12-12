@@ -32,18 +32,18 @@ for(let i = 1; i <= 100; i++) {
 
 const number = +prompt('Enter any integer bigger than 1');
 
-if (number < 2) {
-    alert("Enter the number greater than 1");
-}
-
-stop:if (number > 1) {
-    for (let i = 2; i < number; i++) {
-        if (number % i === 0) {
+if (number > 1) {
+    for (let i = 2; i <= number; i++) {
+        if (number % i === 1 || number === 2) {
+            alert(`${number} is a prime number`);
+            break;
+        } else if (number % i === 0) {
             alert(`${number} isn't a prime number`);
-            break stop;
+            break;
         }
-    }
-    alert(`${number} is a prime number`);
+    } 
+} else {
+    alert("Enter the number greater than 1");
 }
 
 //Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
