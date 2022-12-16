@@ -31,20 +31,14 @@ for(let i = 1; i <= 100; i++) {
 //Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1, які не мають інших дільників крім 1 і себе).
 
 const number = +prompt('Enter any integer bigger than 1');
-
-if (number > 1) {
-    for (let i = 2; i <= number; i++) {
-        if (number % i === 1 || number === 2) {
-            alert(`${number} is a prime number`);
-            break;
-        } else if (number % i === 0) {
-            alert(`${number} isn't a prime number`);
-            break;
-        }
-    } 
-} else {
-    alert("Enter the number greater than 1");
+message = `${number} is a prime number`;
+for (let i = 2; i < (Math.round(Math.sqrt(number)*1)) + 1; i++) {
+    if (number % i === 0) {
+        message = `${number} isn't a prime number`;
+        break;
+    }
 }
+alert(message);
 
 //Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
 
