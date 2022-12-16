@@ -62,8 +62,8 @@ function calcProdSum(prodCount, prodPrice) {
 function main() {
     showList(products);
 
-    let prodNum = userInputProdNum();
-    let prodCount = userInputProdAmount();
+    const prodNum = userInputProdNum();
+    const prodCount = userInputProdAmount();
 
     if (typeof prodNum === 'number') {
         const product = products[prodNum];
