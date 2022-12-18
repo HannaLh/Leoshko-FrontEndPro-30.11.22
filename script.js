@@ -52,3 +52,4 @@ while (powerOfThree <= number) {
     }
     powerOfThree *= 3;
 }
+
