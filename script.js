@@ -6,4 +6,4 @@ function calcSumm(value, power) {
     }
 }
 
-console.log(calcSumm(3, 0));
+console.log(calcSumm(3, 4));
