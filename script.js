@@ -14,7 +14,7 @@ let users = [
     "balance": "$2,613.77",
     "name": "Pauline Gallegos",
     "gender": "female",
-    "phone": "+1 (985) 593-3328",
+    "phone": "+1 (985) 593-3328",  
     "address": "328 Greenpoint Avenue, Torboy, North Dakota, 6857"
     },
     {
@@ -53,24 +53,34 @@ let users = [
     "phone": "+1 (837) 586-3283",
     "address": "314 Dunne Place, Bawcomville, Guam, 9053"
     }
-    ]
+]
 
-users.forEach(item => { 
-    item.balance = item.balance.replaceAll('$','').replaceAll(',', '');
-    item.balance = parseFloat(item.balance);
-});
+let phonesArray = [];
+let summ = 0;
 
-const phoneNumbers = users.filter(function(item){
-    if(item.balance >= 2000){
-        return item.phone;
+for (let i = 0; i < users.length; i++) {
+    const copyBalance = users[i]["balance"].replaceAll('$','').replaceAll(',', '');
+    const fullBalance = parseFloat(copyBalance);
+    summ += fullBalance;
+    if(copyBalance >= 2000) {
+        phonesArray.push(users[i]["phone"]);
+    }
+}
+
+console.log(phonesArray);
+console.log(summ.toFixed(2));
+
+let sum = 0;
+let phoneArray = [];
+
+const usersCopy = users.map(element => {
+    const balanceReplace = element.balance.replaceAll('$','').replaceAll(',', '');
+    const balanceToNumber = parseFloat(balanceReplace);
+    sum += balanceToNumber;
+    if (balanceReplace >= 2000) {
+        phoneArray.push(element.phone);
     }
 });
 
-const resultPhones = phoneNumbers.map(({ phone }) => phone);
-console.log(resultPhones);
-
-const sum = users.reduce((accumulator, object) => {
-    return accumulator + object.balance;
-}, 0);
-
+console.log(phoneArray);
 console.log(sum.toFixed(2));
