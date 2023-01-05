@@ -55,32 +55,16 @@ let users = [
     }
 ]
 
-let phonesArray = [];
-let summ = 0;
-
-for (let i = 0; i < users.length; i++) {
-    const copyBalance = users[i]["balance"].replaceAll('$','').replaceAll(',', '');
-    const fullBalance = parseFloat(copyBalance);
-    summ += fullBalance;
-    if(copyBalance >= 2000) {
-        phonesArray.push(users[i]["phone"]);
-    }
-}
-
-console.log(phonesArray);
-console.log(summ.toFixed(2));
-
 let sum = 0;
-let phoneArray = [];
 
-const usersCopy = users.map(element => {
+const phoneArray = users.map(element => {
     const balanceReplace = element.balance.replaceAll('$','').replaceAll(',', '');
     const balanceToNumber = parseFloat(balanceReplace);
     sum += balanceToNumber;
     if (balanceReplace >= 2000) {
-        phoneArray.push(element.phone);
+        return element.phone;
     }
-});
+}).filter(number => number);
 
 console.log(phoneArray);
 console.log(sum.toFixed(2));
