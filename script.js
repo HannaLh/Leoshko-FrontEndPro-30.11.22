@@ -17,7 +17,7 @@ const onClick = () => {
 enteredWebSite = prompt('enter the website');
 }
 
-buttonOpenWebSite.onclick = function() {
+buttonOpenWebSite.onclick = () => {
 if (enteredWebSite.includes("https")) {
     window.location.href = enteredWebSite;
 } else {
