@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    margin: 30px;
+}
+
+.category-item {
+    flex-grow: 1;
+    border: 2px solid rgb(198, 226, 179);
+    padding: 30px;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(11, 130, 227);
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+}
