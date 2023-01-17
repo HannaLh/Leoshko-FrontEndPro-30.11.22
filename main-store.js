@@ -1,25 +1,24 @@
-const showCategories = categories => {
-
-    const categoriesElem = document.querySelector('.categories');
-    categoriesElem.innerHTML = '';
-
-    categories.forEach(({name, id}) => {
-        const categoryElem = document.createElement('div');
-
-        categoryElem.setAttribute('data-category-id', id);
-        categoryElem.textContent = name;
-        categoryElem.onclick = showProducts;
-
-        categoriesElem.appendChild(categoryElem);
-    });
-};
+const showCategories = () => {
+        const categoriesElem = document.querySelector('.categories');
+        clearElements(['categories', 'products', 'details']);
+    
+        DATA.forEach(({name, id}) => {
+            const categoryElem = document.createElement('div')
+    
+            categoryElem.setAttribute('data-category-id', id);
+            categoryElem.textContent = name;
+            categoryElem.onclick = showProducts;
+    
+            categoriesElem.appendChild(categoryElem);
+        })
+    }
 
 const showProducts = ({target}) => {
+    clearElements(['products', 'details']);
 
     const productsElem = document.querySelector('.products');
     const categoryId = target.getAttribute('data-category-id');
     const products = findProducts(DATA, +categoryId);
-    productsElem.innerHTML = '';
 
     products.forEach(({name, id}) => {
         const productElem = document.createElement('div');
@@ -39,30 +38,38 @@ const showDefaultCategories = () => {
 const savedProducts = {};
 
 const showDetails = ({target}) => {
+    clearElements(['details']);
 
     const detailsElem = document.querySelector('.details');
     const categoryId = target.getAttribute('data-category-id');
     const productId = target.getAttribute('data-product-id');
-    detailsElem.innerHTML = '';
     
-    const orderButtonElem = document.createElement('button');
+    const makeOrderButtonElem = document.createElement('button');
     const product = findProducts(DATA, +categoryId, productId);
 
-    orderButtonElem.textContent = `Order ${product.name}`;
-    orderButtonElem.style = 'width:200px;height:50px;border-radius:50px;border:1px  solid #ddd;-moz-box-shadow: 0px 0px 8px  #fff;color:rgb(40, 15, 203)'
-    orderButtonElem.addEventListener('click', () => {
+    makeOrderButtonElem.textContent = `Order ${product.name}`;
+    makeOrderButtonElem.style = 'width:200px;height:50px;border-radius:50px;border:1px  solid #ddd;-moz-box-shadow: 0px 0px 8px  #fff;color:rgb(40, 15, 203)'
+    makeOrderButtonElem.addEventListener('click', () => {
         savedProducts[categoryId] = savedProducts[categoryId] || {};
         savedProducts[categoryId][productId] = product;
 
         alert('Your product successfully ordered');
         console.log(savedProducts);
     });
-    detailsElem.appendChild(orderButtonElem);
+    detailsElem.appendChild(makeOrderButtonElem);
     console.log('Details', product);
 
-    const clearButtonElem = orderButtonElem;
+    const clearButtonElem = makeOrderButtonElem;
     clearButtonElem.addEventListener('click', showDefaultCategories);
 };
+
+const clearElements = classList => {
+    for (let className of classList) {
+        const elem = document.querySelector(`.${className}`);
+
+        elem.innerHTML = '';
+    }
+}
 
 const findProducts = (data, categoryId, productId = null) => {
     const products = data.find(({id}) => id === categoryId).products;
@@ -70,5 +77,6 @@ const findProducts = (data, categoryId, productId = null) => {
     if (productId) {
         return products.find(({id}) => id === productId);
     }
+
     return products;
 };
