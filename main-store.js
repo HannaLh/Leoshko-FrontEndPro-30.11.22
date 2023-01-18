@@ -1,3 +1,5 @@
+const savedProducts = {};
+
 const showCategories = () => {
         const categoriesElem = document.querySelector('.categories');
         clearElements(['categories', 'products', 'details']);
@@ -35,7 +37,6 @@ const showProducts = ({target}) => {
 const showDefaultCategories = () => {
     showCategories(DATA);
 }
-const savedProducts = {};
 
 const showDetails = ({target}) => {
     clearElements(['details']);
