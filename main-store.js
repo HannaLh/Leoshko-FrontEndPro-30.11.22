@@ -34,10 +34,6 @@ const showProducts = ({target}) => {
     });
 };
 
-const showDefaultCategories = () => {
-    showCategories(DATA);
-}
-
 const showDetails = ({target}) => {
     clearElements(['details']);
 
@@ -60,8 +56,8 @@ const showDetails = ({target}) => {
     detailsElem.appendChild(makeOrderButtonElem);
     console.log('Details', product);
 
-    const clearButtonElem = makeOrderButtonElem;
-    clearButtonElem.addEventListener('click', showDefaultCategories);
+    const formButtonElem = makeOrderButtonElem;
+    formButtonElem.addEventListener('click', showUserForm);
 };
 
 const clearElements = classList => {
