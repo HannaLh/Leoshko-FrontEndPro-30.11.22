@@ -12,12 +12,78 @@
         <div class="category-item details"></div>
     </div>
 
+    <div class="form-wrapper">
+        <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" id="mainForm" class="form-style">
+            <div>
+                <label>Full Name *</label>
+                <input type="text" name="fullName" id="fullName">
+            </div>
+            <div>
+                <label>Amount of products *</label>
+                <input type="number", name="Amount", id="Amount">
+            </div>
+            <div>
+                <label for="citySelect">Choose city:</label>
+                <select name="citySelect" id="citySelect">
+                <option value=""></option>
+                <option value="1" >Kyiv</option>
+                <option value="2">Lviv</option>
+                <option value="3">Dnipro</option>
+                <option value="4">Odesa</option>
+                </select>
+            </div>
+            <div>
+                <label for="postSelect">Choose post office:</label>
+                <select name="postSelect" id="postSelect">
+                <option value=""></option>
+                <option value="1">department 121</option>
+                <option value="2">department 232</option>
+                <option value="3">department 766</option>
+                <option value="4">department 9797</option>
+                </select>
+            </div>
+            <div>
+                <label for="paymentSelect">Choose payment method:</label>
+                <select name="paymentSelect" id="paymentSelect">
+                <option value=""></option>
+                <option value="1">Card</option>
+                <option value="2">Cash</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="commentArea"></label>
+                <textarea id="commentArea" name="commentArea" rows="4" cols="50">
+                Leave any additional info
+                </textarea>
+            </div>
+            <div  class="form-action-buttons">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <div class = "data-table">
+        <table class="list" id="dataList">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Amount</th>
+                    <th>City</th>
+                    <th>Post department</th>
+                    <th>Payment</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
     <script src="./main-store.js"></script>
     <script src="./data-products.js"></script>
     <script src="./create-element.js"></script>
     <script src="./script.js"></script>
     <script src="./validation.js"></script>
-    <script src="./data-table.js"></script>
 
 </body>
 </html>
