@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="shopping-bag">
+        <a href="#" onclick="showShoppingCart()">
+            <img src="./icons/bag.png" alt="cart">
+            Cart
+            <div class="total-items-in-cart">
+                0
+            </div>
+        </a>
+    </div>
+    <div class="products-list">
+        <div class="products" id="products">
+
+        </div>
+        <div class="cart" id="productsCart">
+            <div class="cart-header">
+                <div class="column1">Item</div>
+                <div class="column2">Unit price</div>
+                <div class="column3">Units</div>
+            </div>
+            <div class="cart-items">
+
+            </div>
+            <div class="cart-footer">
+                <div class="subtotal">
+                    Subtotal (0 items): $0
+                </div>
+                <button class="checkout" onclick="showUserForm()">Proceed to checkout</button>
+                <button class="checkout" id="detailsBtn" onclick="showOrderDetails()">View order details</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-wrapper">
+        <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" id="mainForm" class="form-style">
+            <h3>Please fill in following form to proceed the order:</h3>
+            <div>
+                <label for="fullName">Full Name *</label>
+                <input type="text" name="fullName" id="fullName">
+            </div>
+            <div>
+                <label for="citySelect">Choose city:</label>
+                <select name="citySelect" id="citySelect">
+                <option value=""></option>
+                <option value="1" >Kyiv</option>
+                <option value="2">Lviv</option>
+                <option value="3">Dnipro</option>
+                <option value="4">Odesa</option>
+                </select>
+            </div>
+            <div>
+                <label for="postSelect">Choose post office:</label>
+                <select name="postSelect" id="postSelect">
+                <option value=""></option>
+                <option value="1">department 121</option>
+                <option value="2">department 232</option>
+                <option value="3">department 766</option>
+                <option value="4">department 9797</option>
+                </select>
+            </div>
+            <div>
+                <label for="paymentSelect">Choose payment method:</label>
+                <select name="paymentSelect" id="paymentSelect">
+                <option value=""></option>
+                <option value="1">Card</option>
+                <option value="2">Cash</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="commentArea"></label>
+                <textarea id="commentArea" name="commentArea" rows="4" cols="50">
+                Leave any additional info
+                </textarea>
+            </div>
+            <div  class="form-action-buttons">
+                <input type="submit" value="Submit" id="submitBtn">
+            </div>
+            <div id="userFormData" class="msg">
+                <pre></pre>
+            </div>
+        </form>
+    </div>
+
+    <script src="./products.js"></script>
+    <script src="./app.js"></script>
+    <script src="./validation.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+</html>
