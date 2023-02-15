@@ -25,7 +25,7 @@ function showOrderDetails() {
   document.getElementById('userFormData').style.visibility = "visible"
 }
 
-const renderProdcuts = () => {
+const displayProducts = () => {
     products.forEach((product) => {
     productsEl.innerHTML += `
             <div class="item">
@@ -46,7 +46,7 @@ const renderProdcuts = () => {
         `;
 });
 }
-renderProdcuts();
+displayProducts();
 
 let cart = JSON.parse(localStorage.getItem("CART")) || [];
 updateCart();
