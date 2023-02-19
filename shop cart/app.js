@@ -21,8 +21,13 @@ const showShoppingCart = () => {
     document.getElementById('products').style.display = "none";
 }
 
-function showOrderDetails() {
-  document.getElementById('userFormData').style.visibility = "visible"
+async function showOrderDetails() {
+    const userData = await JSON.parse(localStorage.getItem("userFormData"));
+
+    if(userData) {
+      pre.textContent = '\n' + JSON.stringify(userData, '\t', 2);
+      document.getElementById('userFormData').style.visibility = "visible";
+    }
 }
 
 const displayProducts = () => {

@@ -1,19 +1,19 @@
 const form = document.getElementById("mainForm");
+let userTableStorage = [];
+const pre = document.querySelector('#userFormData pre');
+
 function onFormSubmit () {
     if(!validate()){
         alert('Form was not filled correctly');
     }else {
-        document.getElementById('submitBtn').addEventListener('click', eddInfo);
+        eddInfo();
         alert('Your order is successfully placed!');
         form.style.visibility = "hidden";
     }
 }
 
-let userTableStorage = [];
-let pre = document.querySelector('#userFormData pre');
 const eddInfo = (ev)=> {
-    ev.preventDefault();
-    let dataStorage = {
+    const dataStorage = {
         name: document.getElementById('fullName').value,
         city: document.getElementById('citySelect').value,
         post: document.getElementById('postSelect').value,
