@@ -1,4 +1,3 @@
-
 const productsEl = document.querySelector(".products");
 const cartItemsEl = document.querySelector(".cart-items");
 const subtotalEl = document.querySelector(".subtotal");
@@ -79,62 +78,62 @@ function updateCart() {
 }
 
 function renderSubtotal() {
-  let totalPrice = 0,
-    totalItems = 0;
+    let totalPrice = 0,
+      totalItems = 0;
 
-  cart.forEach((item) => {
-    totalPrice += item.price * item.numberOfUnits;
-    totalItems += item.numberOfUnits;
-  });
+    cart.forEach((item) => {
+      totalPrice += item.price * item.numberOfUnits;
+      totalItems += item.numberOfUnits;
+    });
 
-  subtotalEl.innerHTML = `Subtotal (${totalItems} items): $${totalPrice.toFixed(2)}`;
-  totalItemsInCartEl.innerHTML = totalItems;
+    subtotalEl.innerHTML = `Subtotal (${totalItems} items): $${totalPrice.toFixed(2)}`;
+    totalItemsInCartEl.innerHTML = totalItems;
 }
 
 function renderCartItems() {
-  cartItemsEl.innerHTML = ""; 
-  cart.forEach((item) => {
-    cartItemsEl.innerHTML += `
-        <div class="cart-item">
-            <div class="item-info" onclick="removeItemFromCart(${item.id})">
-                <h4>${item.name}</h4>
-            </div>
-            <div class="unit-price">
-                <small>$</small>${item.price}
-            </div>
-            <div class="units">
-                <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
-                <div class="number">${item.numberOfUnits}</div>
-                <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>
-            </div>
-        </div>
-    `;
+    cartItemsEl.innerHTML = ""; 
+    cart.forEach((item) => {
+      cartItemsEl.innerHTML += `
+          <div class="cart-item">
+              <div class="item-info" onclick="removeItemFromCart(${item.id})">
+                  <h4>${item.name}</h4>
+              </div>
+              <div class="unit-price">
+                  <small>$</small>${item.price}
+              </div>
+              <div class="units">
+                  <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
+                  <div class="number">${item.numberOfUnits}</div>
+                  <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>
+              </div>
+          </div>
+      `;
 });
 }
 
 function removeItemFromCart(id) {
-  cart = cart.filter((item) => item.id !== id);
+    cart = cart.filter((item) => item.id !== id);
 
-  updateCart();
+    updateCart();
 }
 
 function changeNumberOfUnits(action, id) {
-  cart = cart.map((item) => {
-    let numberOfUnits = item.numberOfUnits;
+    cart = cart.map((item) => {
+        let numberOfUnits = item.numberOfUnits;
 
-    if (item.id === id) {
-      if (action === "minus" && numberOfUnits > 1) {
-        numberOfUnits--;
-      } else if (action === "plus" && numberOfUnits < item.instock) {
-        numberOfUnits++;
-      }
-    }
+        if (item.id === id) {
+          if (action === "minus" && numberOfUnits > 1) {
+            numberOfUnits--;
+          } else if (action === "plus" && numberOfUnits < item.instock) {
+            numberOfUnits++;
+          }
+        }
 
-    return {
-      ...item,
-      numberOfUnits,
-    };
-  });
+        return {
+          ...item,
+          numberOfUnits,
+        };
+});
 
   updateCart();
 }

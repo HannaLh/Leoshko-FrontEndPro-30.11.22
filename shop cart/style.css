@@ -14,16 +14,18 @@ a {
   display: flex;
   justify-content: end;
 }
+
 .shopping-bag a {
   display: flex;
   align-items: center;
   font-size: 20px;
 }
+
 .shopping-bag a img {
   width: 32px;
   height: 32px;
-
 }
+
 .shopping-bag .total-items-in-cart {
   margin-left: 10px;
   padding: 5px;
@@ -48,6 +50,7 @@ img {
   background-color: #dddddd;
   border-radius: 5px;
   margin: 50px auto;
+  position: relative;
 }
 
 .cart-header {
@@ -58,9 +61,6 @@ img {
 
 .cart-items {
   max-height: calc(100vh - 247px);
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 5px;
 }
 
 .cart-item {
@@ -68,6 +68,7 @@ img {
   justify-content: space-around;
   padding: 0px 0;
 }
+
 .cart-item div {
   display: flex;
   align-items: center;
@@ -83,10 +84,12 @@ img {
   padding: 10px;
   margin-bottom: 5px;
 }
+
 .cart-item .item-info:hover {
   background-color: rgba(214, 200, 104, 0.6);
   cursor: pointer;
 }
+
 .cart-item .item-info img {
   width: 75px;
 }
@@ -101,9 +104,9 @@ img {
 }
 .cart-item .units .number {
   margin: 0 10px;
-
   font-size: 1.2rem;
 }
+
 .cart-item .units .btn {
   width: 20px;
   height: 20px;
@@ -140,32 +143,6 @@ img {
     width: 50%;
 }
 
-.data-table {
-    padding: 20px;
-    margin: auto;
-    width: 70%;
-}
-
-body > table{
-    width: 80%;
-}
-
-table{
-    border-collapse: collapse;
-}
-table.list{
-    width:100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-tr:nth-child(even),table.list thead>tr {
-    background-color: #dddddd;
-}
-
 input[type=text], input[type=number], select, textarea{
     width: 100%;
     padding: 8px 20px;
@@ -189,5 +166,8 @@ form div.form-action-buttons{
 }
 
 .msg {
-  background-color: aquamarine;
+  background-color: rgb(174, 190, 185);
+  position: absolute;
+  top: 60%;
+  right: 20%;
 }
