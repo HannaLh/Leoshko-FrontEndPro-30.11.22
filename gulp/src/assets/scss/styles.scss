@@ -1,0 +1,20 @@
+$color_1: rgb(11, 130, 227);
+$font-family_1: Georgia, 'Times New Roman', Times, serif;
+
+.container {
+	display: flex;
+	margin: 30px;
+}
+.category-item {
+	flex-grow: 1;
+	border: 2px solid rgb(198, 226, 179);
+	padding: 30px;
+	font-size: 18px;
+	font-family: $font-family_1;
+	color: $color_1;
+}
+
+.details {
+	display: flex;
+	justify-content: center;
+}
